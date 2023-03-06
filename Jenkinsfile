@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'cypress/included:3.8.0'
+            image 'ewadus/cypress:1.0.0'
         }
     }
     stages {
