@@ -1,20 +1,40 @@
 pipeline {
-  agent {
-    // this image provides everything needed to run Cypress
-    docker {
+  docker {
     image 'cypress/included:12.7.0'
     }
-  }
 
-  stages {
-    stage('build and test') {
-      environment {
-        CYPRESS_trashAssetsBeforeRuns = 'false'
-      }
+   tools {nodejs "Node16"}
 
-      steps {
-        sh "npx cypress run"
-      }
-    }
-  }
+   environment {
+       CHROME_BIN = '/bin/google-chrome'
+      
+   }
+
+   stages {
+       stage('Dependencies') {
+           steps {
+               sh 'npm i'
+           }
+       }
+       stage('e2e Tests') {
+         Parallel{
+             stage('Test 1') {
+                  steps {
+                sh 'npx cypress run'
+                  }
+               }
+             
+             stage('Test 2') {
+                  steps {
+                sh 'npx cypress run'
+                  }
+               }
+
+       }
+       stage('Deploy') {
+           steps {
+               echo 'Deploying....'
+           }
+       }
+   }
 }
