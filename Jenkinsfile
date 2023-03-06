@@ -10,7 +10,7 @@ pipeline {
 
    stages {
        stage('Dependencies') {
-           steps {
+           steps {~
                sh 'npm i'
            }
        }
@@ -23,7 +23,7 @@ pipeline {
                }
              
              stage('Test 2') {
-                  steps {
+                  steps {~
                 sh 'px cpyress run'
                   }
                }
