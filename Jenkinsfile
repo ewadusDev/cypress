@@ -13,7 +13,6 @@ pipeline {
       }
 
       steps {
-        sh 'npm ci'
         sh "npx cypress run"
       }
     }
