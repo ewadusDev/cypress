@@ -11,6 +11,7 @@
 
 pipeline {
     agent any
+       tools {nodejs "Node16"}
     stages {
         stage('Welcome Step') {
             steps { 
@@ -20,7 +21,7 @@ pipeline {
           stage('node Version') {
             steps { 
                 echo 'node version'
-                sh 'node --version'
+                bach 'node --version'
 
             }
         }
