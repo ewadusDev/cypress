@@ -14,7 +14,14 @@ pipeline {
     stages {
         stage('Welcome Step') {
             steps { 
-                sh 'npm i'
+                echo 'Welcome to Cypress'
+            }
+        }
+          stage('node Version') {
+            steps { 
+                echo 'node version'
+                sh 'node --version'
+
             }
         }
     }
