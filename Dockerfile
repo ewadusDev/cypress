@@ -1,5 +1,5 @@
 FROM cypress/base:18.14.1
-USER 0
+USER root
 RUN mkdir /cypress_project
 WORKDIR /cypress_project
 COPY ./package.json .
