@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo hello",
-    "install": "sudo apt-get update"
+    "install": "apt-get update"
   },
   "keywords": [],
   "author": "",
